@@ -1,0 +1,22 @@
+{
+  "name": "@local/agent-orchestrator",
+  "version": "1.0.0",
+  "description": "Asynchronous 3-agent software engineering pipeline plugin for DeepSeek Harness (dsh).",
+  "main": "index.js",
+  "type": "commonjs",
+  "exports": {
+    ".": "./index.js"
+  },
+  "dependencies": {},
+  "dsh": {
+    "bundle": {
+      "type": "engineering-plugin",
+      "profile": {
+        "commands": ["pipeline", "pipeline-start", "pipeline-status"],
+        "permissions": ["fs-read", "fs-write", "shell-exec", "llm-inference"],
+        "storageMount": "/mnt/f/ai/"
+      }
+    }
+  }
+}
+

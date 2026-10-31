@@ -1,0 +1,11 @@
+# cordis.patch.yml
+# Injects the Obsidian orchestrator command context row directly into the DSH runtime store
+- id: command.pipeline
+  name: agent-orchestrator
+  config:
+    architectProvider: qwen_local
+    architectModel: qwen38_27b_xhigh
+    runnerProvider: ollama_local
+    runnerModel: gemma4_12b
+    testTimeoutMs: 600000
+    maxRetries: 5

@@ -1,0 +1,22 @@
+- insert:
+    - id: "obsidian-orchestrator-layer"
+      name: "@local/agent-orchestrator"
+      type: "engineering-plugin"
+      config:
+        architectProvider: "qwen_local"
+        architectModel: "qwen38_27b_xhigh"
+        runnerProvider: "ollama_local"
+        runnerModel: "gemma4_12b"
+        testTimeoutMs: 600000
+        maxRetries: 5
+        profile:
+          commands:
+            - "pipeline"
+            - "pipeline-start"
+            - "pipeline-status"
+          permissions:
+            - "fs-read"
+            - "fs-write"
+            - "shell-exec"
+            - "llm-inference"
+          storageMount: "/mnt/f/ai/"
